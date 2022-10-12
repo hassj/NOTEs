@@ -1,0 +1,13 @@
+Resize LVM volume when physical have free disk:
+
+pvresize /dev/sda
+lsblk
+vgdisplay
+lvextend -l +5120 /dev/mapper/ubuntu--vg-ubuntu--lv
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+lvdisplay
+vgdisplay
+df -h
+   
+https://www.redhat.com/sysadmin/resize-lvm-simple
+https://serverfault.com/questions/812116/how-do-i-resize-an-lvm-physical-volume
